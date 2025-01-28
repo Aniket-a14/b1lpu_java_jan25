@@ -37,6 +37,7 @@ public class User {
     public static void main(String[] args) {
         // Default constructor
         User user1 = new User();
+        user1.setBalance(0.0);
         
         
         User user2 = new User("John Doe", "123456789");
