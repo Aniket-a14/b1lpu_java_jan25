@@ -19,29 +19,30 @@ public class guestimation {
         return 0;
     }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int r = (int)(Math.random()%101);
+        try (Scanner sc = new Scanner(System.in)) {
+            int r = (int)(Math.random()%101);
 
-        int attempts = 0;
-        boolean flag = true;
-        while(flag){
-            int g = sc.nextInt();
-            attempts++;
-            if(!(g >= 0 && g <= 100)){
-                System.err.println("You have not given a valid i/p. Try again!!");
-                continue;
-                // return;
+            int attempts = 0;
+            boolean flag = true;
+            while(flag){
+                int g = sc.nextInt();
+                attempts++;
+                if(!(g >= 0 && g <= 100)){
+                    System.err.println("You have not given a valid i/p. Try again!!");
+                    continue;
+                    // return;
+                }
+                if(g == r)System.out.println("You have guessed a right no. and you took "+attempts+" attempts to guess.");
+                else{
+                   String str = (g > r ? "greater" : "smaller");
+                   System.out.println("the guessed no. is "+str+" from the r no.!");
+                }
+                System.out.println("you want to continue?(0/1):");
+                int f = sc.nextInt();
+                if(f == 0)return;
             }
-            if(g == r)System.out.println("You have guessed a right no. and you took "+attempts+" attempts to guess.");
-            else{
-               String str = (g > r ? "greater" : "smaller");
-               System.out.println("the guessed no. is "+str+" from the r no.!");
-            }
-            System.out.println("you want to continue?(0/1):");
-            int f = sc.nextInt();
-            if(f == 0)return;
+
+            sc.close();
         }
-
-        sc.close();
     }
 }
