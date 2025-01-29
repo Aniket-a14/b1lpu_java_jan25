@@ -1,5 +1,6 @@
 package Day6;
 import Day5.User;
+
 public class Middle_man {
     // make dynamic in future
     private User user = new User("Aryan","1","6969");
@@ -12,7 +13,7 @@ public class Middle_man {
 
     // Authantication for card users
     public boolean authForCard(String name,String Pin){
-        if(user.getName().equalsIgnoreCase(name) && user.getPin().equalsIgnoreCase(pin))return true;
+        if(user.getName().equalsIgnoreCase(name) && user.getPin().equalsIgnoreCase(Pin))return true;
         return false;
     }
 

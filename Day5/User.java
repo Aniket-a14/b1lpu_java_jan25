@@ -44,7 +44,7 @@ public class User {
         user1.setBalance(0.0);
         
         
-        User user2 = new User("John Doe", "123456789");
+        User user2 = new User("John Doe", "123456789", "1234");
 
         // Set details
         user2.setPhnNo("9876543210");
